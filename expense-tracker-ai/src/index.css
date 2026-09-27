@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-brand-navy bg-brand-bg antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* Visible keyboard focus states everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #0F172A;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-card;
+  }
+
+  .section-pad {
+    @apply px-6 sm:px-8 lg:px-12 py-20 lg:py-28;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 font-semibold text-white shadow-glow transition-all duration-300 hover:bg-brand-blue-deep hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3.5 font-semibold text-brand-navy transition-all duration-300 hover:border-brand-blue/40 hover:-translate-y-0.5 hover:shadow-soft active:translate-y-0;
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:-translate-y-0.5;
+  }
+
+  .eyebrow-dot::before {
+    content: '';
+    @apply inline-block w-1.5 h-1.5 rounded-full bg-brand-blue;
+  }
+}
+
+/* Reduced motion respect: disable non-essential looping animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
