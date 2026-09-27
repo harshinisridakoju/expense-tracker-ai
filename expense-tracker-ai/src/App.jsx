@@ -9,6 +9,7 @@ import Benefits from './components/Benefits'
 import TargetUsers from './components/TargetUsers'
 import ValueProp from './components/ValueProp'
 import AppPreview from './components/AppPreview'
+import Pricing from './components/Pricing'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 
@@ -27,6 +28,7 @@ export default function App() {
         <TargetUsers />
         <ValueProp />
         <AppPreview />
+        <Pricing />
         <CTA />
       </main>
       <Footer />
